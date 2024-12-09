@@ -1,3 +1,4 @@
+##Blog Explorer
 An interactive and dynamic blog exploration website that allows users to search, filter, and create blogs based on categories. It includes a video background and a sleek interface with dark mode functionality.
 
 Features
