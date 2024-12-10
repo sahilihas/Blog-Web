@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f9fc;
+    background-color: rgb(44, 46, 67);
     color: #333;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: rgb(250, 243, 243);
   }
   
   .video-banner video {
@@ -32,25 +32,24 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
     object-fit: cover;
+    border-radius: 1px;
     z-index: -1;
   }
   
   .banner-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    border-radius: 5px;
+    background: transparent
   }
   
   .banner-overlay h1 {
-    font-size: 3rem;
+    font-size: 10rem;
     margin-bottom: 1rem;
   }
   
   .banner-overlay p {
-    font-size: 1.2rem;
-  }
+    font-size: 1.5rem;
+  }  
   
   /* Main Section */
   main {
@@ -58,75 +57,106 @@ body {
     padding: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: rgb(44, 46, 67);
+    border-radius: 5px;
   }
+
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensures particles are in the background */
+  }  
   
   /* Search and Add Blog Section */
   .search-add-section {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+    gap: 2rem; /* Space between the two containers */
     margin-bottom: 2rem;
   }
   
-  .search-container,
-  .add-blog-container {
-    flex: 1 1 calc(50% - 1rem);
+  .search-container {
+    flex: 1 1 calc(50% - 1rem); /* Make both containers take equal width */
     padding: 1.5rem;
-    background-color: #ffffff;
+    background-color: #a581f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1),
+                0 0 20px rgba(94, 140, 232, 0.5), /* Neon glow */
+                0 0 30px rgba(43, 78, 160, 0.3); /* Neon glow */
+    filter: drop-shadow(0 0 10px rgba(20, 49, 110, 0.5)); /* Neon glow */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+  }
+
+  .add-blog-container {
+    flex: 1 1 calc(50% - 1rem); /* Make both containers take equal width */
+    padding: 1.5rem;
+    background-color: #e48f8f;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
   }
   
+  /* Input fields inside search container */
   .search-container input,
-  .search-container select,
+  .search-container select {
+    width: 100%; /* Full width of the container */
+    padding: 1rem; /* Inner spacing for inputs */
+    font-size: 1rem; /* Consistent font size */
+    border: 1px solid #3d409f; /* Border for inputs */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 1rem; /* Space between elements */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+  }
+  
+  /* Fix for the Add Blog Form */
   #add-blog-form input,
   #add-blog-form textarea,
   #add-blog-form select,
   #add-blog-form button {
-    width: 100%;
-    padding: 1rem;
+    width: 100%; /* Full width for form elements */
+    padding: 1rem; /* Inner padding */
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 1rem;
+    box-sizing: border-box; /* Include padding in element width */
   }
   
-  /* Button Container */
-  .button-container {
+  /* Ensure search container elements align properly */
+  .search-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    gap: 1rem; /* Space between input and select */
   }
   
-  /* 3D Button Styles */
-  .btn {
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border: none;
-    outline: none;
+ /* From Uiverse.io by satyamchaudharydev */ 
+.button {
+    --bg: #000;
+    --hover-bg: #ff90e8;
+    --hover-text: #000;
+    color: #fff;
     cursor: pointer;
-    border-radius: 10px;
-    background: linear-gradient(145deg, #2330ea, #3244e6);
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    color: white;
-    transform: translateY(0);
+    border: 1px solid var(--bg);
+    border-radius: 4px;
+    padding: 0.8em 2em;
+    background: var(--bg);
+    transition: 0.2s;
   }
   
-  /* Hover Effect */
-  .btn:hover {
-    background: linear-gradient(145deg, #6a1ada, #4d23e4);
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3), -4px -4px 12px rgba(255, 255, 255, 0.4);
-    transform: translateY(-5px);
-    animation: pulse 1s infinite;
+  .button:hover {
+    color: var(--hover-text);
+    transform: translate(-0.25rem, -0.25rem);
+    background: var(--hover-bg);
+    box-shadow: 0.25rem 0.25rem var(--bg);
   }
   
-  /* Click Effect (Active) */
-  .btn:active {
-    transform: translateY(4px);
-    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.3);
+  .button:active {
+    transform: translate(0);
+    box-shadow: none;
   }
   
   /* Pulse Animation for Hover */
