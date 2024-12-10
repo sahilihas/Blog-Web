@@ -80,6 +80,80 @@ const blogs = [
     }
   ];
   
+  // script.js or inside a <script> tag
+particlesJS("particles-js", {
+    particles: {
+      number: {
+        value: 100, // number of particles
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      color: {
+        value: "#ffffff" // particle color
+      },
+      shape: {
+        type: "circle", // shape of particles
+        stroke: {
+          width: 0,
+          color: "#000000"
+        },
+        polygon: {
+          nb_sides: 5
+        }
+      },
+      opacity: {
+        value: 0.5, // particle opacity
+        random: true,
+        anim: {
+          enable: true,
+          speed: 1,
+          opacity_min: 0.1
+        }
+      },
+      size: {
+        value: 3, // size of particles
+        random: true,
+        anim: {
+          enable: true,
+          speed: 40,
+          size_min: 0.1
+        }
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff", // line color
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 6,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "repulse" // effect on hover (particles will move away from cursor)
+        },
+        onclick: {
+          enable: true,
+          mode: "push" // add more particles on click
+        }
+      }
+    },
+    retina_detect: true
+  });
+  
   
   // Function to display blogs based on search and category filter
   function displayBlogs() {
